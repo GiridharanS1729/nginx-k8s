@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/GiridharanS1729/nginx-k8s.git'  // Fetch code from GitHub
+                git credentialsId: 'github_seccred', url: 'https://github.com/GiridharanS1729/nginx-k8s.git'
             }
         }
         stage('Deploy to Kubernetes') {
